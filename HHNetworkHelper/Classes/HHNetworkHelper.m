@@ -354,7 +354,7 @@ static NSString *_cacheAdditional;
 
 #pragma mark - 下载文件
 
-+ (NSURLSessionTask *)downloadWithURL:(NSString *)URL fileDir:(NSString *)fileDir progress:(HTHttpProgress)progress success:(void (^)(NSString * _Nonnull))success failure:(HHResponseFailure)failure {
++ (NSURLSessionTask *)downloadWithURL:(NSString *)URL filePath:(NSString *)filePath progress:(HTHttpProgress)progress success:(void (^)(NSString * _Nonnull))success failure:(HHResponseFailure)failure {
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URL]];
     
@@ -369,8 +369,11 @@ static NSString *_cacheAdditional;
         
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         
+        if (filePath && filePath.length > 0) {
+            return [NSURL fileURLWithPath:filePath];
+        }
         // 拼接缓存目录
-        NSString *downloadDir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileDir ?: @"Download"];
+        NSString *downloadDir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"Download"];
         // 打开文件管理器
         NSFileManager *fileManager = [NSFileManager defaultManager];
         // 创建Download目录

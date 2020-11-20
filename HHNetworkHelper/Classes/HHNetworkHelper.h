@@ -144,8 +144,8 @@ typedef void(^HHNetworkStatus)(HHNetworkStatusType status);
 + (__kindof NSURLSessionTask *)uploadFileWithURL:(NSString *)URL
                                       parameters:(nullable id)parameters
                                             name:(nullable NSString *)name
-                                        filePath:(NSString *)filePath
-                                        mimeType:(NSString *)mimeType
+                                        filePath:(nullable NSString *)filePath
+                                        mimeType:(nullable NSString *)mimeType
                                         progress:(nullable HTHttpProgress)progress
                                          success:(nullable HHResponseSuccess)success
                                          failure:(nullable HHResponseFailure)failure;
@@ -181,14 +181,14 @@ typedef void(^HHNetworkStatus)(HHNetworkStatusType status);
  下载文件
  
  @param URL         请求地址
- @param fileDir     文件存储目录(默认存储目录为Download)
+ @param filePath     文件存储路径(默认存储目录为Download)
  @param progress    文件下载的进度信息
  @param success     下载成功的回调(回调参数filePath:文件的路径)
  @param failure     下载失败的回调
  @return 返回NSURLSessionDownloadTask实例，可用于暂停继续，暂停调用suspend方法，开始下载调用resume方法
  */
 + (__kindof NSURLSessionTask *)downloadWithURL:(NSString *)URL
-                                       fileDir:(nullable NSString *)fileDir
+                                      filePath:(nullable NSString *)filePath
                                       progress:(nullable HTHttpProgress)progress
                                        success:(nullable void(^)(NSString *filePath))success
                                        failure:(nullable HHResponseFailure)failure;

@@ -19,7 +19,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - HHNetworkHelper (0.1.0):
+  - HHNetworkHelper (0.0.1):
     - AFNetworking (~> 4.0.1)
     - YYCache (~> 1.0.4)
   - YYCache (1.0.4)
@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  HHNetworkHelper: 125f310e841131a7c60fa04200f1ecb4838638a4
+  HHNetworkHelper: 64c9b80ecb0a26c60e24277750360f59f335b6b0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: 74862c655fec380196fba0944e6e2602ae928069
