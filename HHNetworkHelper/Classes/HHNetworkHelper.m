@@ -534,8 +534,6 @@ static NSString *_cacheAdditional;
         NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         
         if (error) {
-            return responseData;
-        } else {
             // 解析字典错误时，解析成字符串
             NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
             return string;
