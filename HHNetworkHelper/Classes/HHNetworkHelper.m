@@ -535,6 +535,10 @@ static NSString *_cacheAdditional;
         
         if (error) {
             return responseData;
+        } else {
+            // 解析字典错误时，解析成字符串
+            NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+            return string;
         }
         
         return response;
