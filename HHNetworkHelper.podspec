@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HHNetworkHelper'
-  s.version          = '0.0.3'
-  s.summary          = 'A short description of HHNetworkHelper.'
+  s.version          = '1.0.0'
+  s.summary          = '封装AFNetwork4.0工具，YYCache缓存'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  封装AFNetwork4.0工具，YYCache缓存，实现GET，POST缓存请求，上传文件，下载文件，多张图片上传
                        DESC
 
   s.homepage         = 'https://github.com/hutaol/HHNetworkHelper'
