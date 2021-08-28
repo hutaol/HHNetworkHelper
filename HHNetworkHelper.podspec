@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HHNetworkHelper'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '封装AFNetwork4.0工具，YYCache缓存'
 
 # This description is used to generate tags and improve search results.

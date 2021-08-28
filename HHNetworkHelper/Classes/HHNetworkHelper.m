@@ -389,9 +389,12 @@ static NSString *_cacheAdditional;
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
         [[self allSessionTask] removeObject:downloadTask];
-        if (failure && error) {
-            failure(error);
-            
+       
+        if (error) {
+            [[NSFileManager defaultManager] removeItemAtPath:filePath.path error:nil];
+            if (failure) {
+                failure(error);
+            }
             if (_isOpenLog) {
                 [self logWithFailureError:error url:URL params:nil];
             }
